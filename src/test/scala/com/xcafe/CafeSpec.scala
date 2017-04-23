@@ -4,7 +4,7 @@ import org.scalatest.{Matchers, WordSpec}
 
 class CafeSpec extends WordSpec with Matchers{
 
-  val cafe = new Cafe()
+  val cafe = new Cafe(CafeMenu)
 
   "getBill" should {
     "return the total amount of the purchased items" in {

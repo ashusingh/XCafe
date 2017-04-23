@@ -1,14 +1,8 @@
 package com.xcafe
 
-class Cafe {
+class Cafe(menu: Menu) {
 
-  val menu = Map(
-    "Cola" -> BigDecimal(.50),
-    "Coffee" -> BigDecimal(1.00),
-    "Cheese Sandwich" -> BigDecimal(2.00),
-    "Steak Sandwich" -> BigDecimal(4.50)
-  )
 
-  def getBill(purchasedItem : String*) : BigDecimal = purchasedItem.flatMap(menu.get).sum
+  def getBill(purchasedItem : String*) : BigDecimal = purchasedItem.flatMap(menu.getItem).map(_.price).sum
 
 }
